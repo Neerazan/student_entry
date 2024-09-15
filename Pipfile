@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+psycopg2 = "*"
+pillow = "*"
+django-filter = "*"
+python-decouple = "*"
+django-split-settings = "*"
+django-debug-toolbar = "*"
+drf-spectacular = "*"
+
+[dev-packages]
+flake8 = "*"
+pre-commit = "*"
+django-debug-toolbar = "*"
+
+[requires]
+python_version = "3.10"
