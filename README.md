@@ -20,8 +20,8 @@ A Django-based web application for managing student records with integration of 
 
 1. **Clone the Repository:**
    ```sh
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone git@github.com:Neerazan/student_entry.git
+   cd student_entry
    ```
 
 2. **Set up Virtual Environment:**
@@ -30,25 +30,84 @@ A Django-based web application for managing student records with integration of 
    pipenv shell
    ```
 
-3. **Install Dependencies:**
+3. **Set Up Environment Variables
+
+   Copy the sample environment file and configure your settings:
+
    ```sh
-   pipenv install django djangorestframework
+   cp .env-sample .env
    ```
 
-4. **Apply Migrations:**
-   ```sh
-   python manage.py migrate
+4. **Update `.env` with your database and other settings. Example `.env` configuration:
+
+   ```env
+   DEBUG = True
+   SECRET_KEY = '<your-secret-key>'  # Need to setup only if Debug is False
+   DATABASE_PASSWORD = '<your-database-password>'
+   DATABASE_USER = '<your-database-user>'
+   DATABASE_NAME = '<your-database-name>'
+   DATABASE_HOST = '<your-database-host>'
+   DATABASE_PORT = '<your-database-port>'
    ```
 
-5. **Create Superuser (for admin access):**
+5. **Run Migrations
+
    ```sh
-   python manage.py createsuperuser
+   make migrate
    ```
 
-6. **Run the Development Server:**
+6. **Create Superuser (Optional)
+
    ```sh
-   python manage.py runserver 8025
+   make superuser
    ```
+
+7. **Run the Development Server
+
+   ```sh
+   make run
+   ```
+
+The application will be available at http://localhost:8025.
+
+## API Endpoints
+
+   * **List Students:** `GET /api/students/`
+   * **Create Student:** `POST /api/students/`
+   * **Retrieve Student:** `GET /api/students/{id}/`
+   * **Update Student:** `PUT /api/students/{id}/`
+   * **Delete Student:** `DELETE /api/students/{id}/`
+
+## Code Quality
+
+### Linting
+
+Run linting checks using:
+
+   ```sh
+   make lint
+   ```
+
+### Pre-commit Hooks
+
+   Install pre-commit hooks to ensure code quality:
+
+   ```sh
+   make install-pre-commit
+   ```
+
+## Makefile Targets
+
+   * **install:** Install project dependencies.
+   * **install-pre-commit:** Install pre-commit hooks.
+   * **lint:** Run linting checks.
+   * **run:** Start the Django development server on port 8025.
+   * **migrate:** Apply database migrations.
+   * **migrations:** Create new migrations.
+   * **shell:** Open Django shell.
+   * **superuser:** Create a Django superuser.
+   * **update:** Install dependencies and apply migrations.
+   * **app:** Create a new Django app (requires `name` variable).
 
 ## Usage
 
@@ -63,7 +122,11 @@ A Django-based web application for managing student records with integration of 
 The REST API endpoints are available at:
 
 - List/Create: `http://localhost:8025/api/students/`
-- Retrieve/Update/Delete: `http://localhost:8025/api/students/<id>/`
+- Retrieve/Update/Delete: `http://localhost:8025/api/students/<=slug>/`
+
+### DJANGO TEMPLATE
+- List/Create: `http://localhost:8025/students-template/`
+- Retrieve/Update/Delete: `http://localhost:8025/api/students/<slug>/`
 
 Use appropriate HTTP methods (GET, POST, PUT, DELETE) to interact with the API.
 
@@ -71,12 +134,7 @@ Use appropriate HTTP methods (GET, POST, PUT, DELETE) to interact with the API.
 
 For detailed API documentation, visit `http://localhost:8025/api/docs/` after starting the development server.
 
-## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ## License
@@ -85,6 +143,6 @@ Distributed under the MIT License. See `LICENSE` file for more information.
 
 ## Contact
 
-Your Name - your.email@example.com
+Nirajan Dhakal - nirajandhakal634@gmail.com
 
-Project Link: [https://github.com/yourusername/student-entry-system](https://github.com/yourusername/student-entry-system)
+Project Link: [https://github.com/Neerazan/student_entry](https://github.com/Neerazan/student_entry)
