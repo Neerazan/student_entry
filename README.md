@@ -43,7 +43,8 @@ A Django-based web application for managing student records with integration of 
 
    ```env
    DEBUG = True
-   SECRET_KEY = '<your-secret-key>'  # Need to setup only if Debug is False
+   SECRET_KEY = '<your-secret-key>'
+   #  Need to setup only if Debug is False 
    DATABASE_PASSWORD = '<your-database-password>'
    DATABASE_USER = '<your-database-user>'
    DATABASE_NAME = '<your-database-name>'
