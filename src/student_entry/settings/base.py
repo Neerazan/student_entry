@@ -1,4 +1,5 @@
 import os
+
 from decouple import config
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -17,14 +18,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # Third Party Apps
     'django_filters',
     'rest_framework',
     'drf_spectacular',
-
     # Local Apps
-    'src.app'
+    'src.app',
 ]
 
 MIDDLEWARE = [

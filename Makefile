@@ -49,4 +49,3 @@ app:
 	@echo -e '\033[32mCreating new app...\033[0m'
 	cd src && python manage.py startapp $(name);
 	@echo -e '\033[32m${name}\033[0m app created successfully inside \033[31m/src/\033[0m directory...'
-	

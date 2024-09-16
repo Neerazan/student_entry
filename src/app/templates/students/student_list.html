@@ -11,7 +11,7 @@
         h1, h2 {
             color: #333;
         }
-        
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -29,7 +29,7 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-        
+
         form {
             background-color: #fff;
             padding: 20px;
@@ -101,7 +101,7 @@
 </head>
 <body>
     <h1>Student List</h1>
-    
+
 
     <table>
         <thead>
@@ -125,7 +125,7 @@
                     <td class="actions">
 
                         <a href="{% url 'student-detail' student.slug %}" class="edit-btn">Edit</a>
-                        
+
 
                         <form method="post" action="{% url 'student-delete' student.slug %}" onsubmit="return confirm('Are you sure you want to delete this student?');">
                             {% csrf_token %}

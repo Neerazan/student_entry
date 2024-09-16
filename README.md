@@ -1,11 +1,12 @@
 # Student Entry System
 
-A Django-based web application for managing student records with integration of Django Rest Framework (DRF) for API access. This project allows administrators to create, update, and delete student records through a web interface and exposes the student model through a REST API.
+A Django-based web application for managing student records with integration of both Django Rest Framework (DRF) for API access and Django templates for a web interface. This project allows administrators to create, update, and delete student records through both a user-friendly web interface and a REST API. It provides different views for managing student records: the Django template views allow for traditional form-based interactions, while the REST API endpoints enable programmatic access and manipulation of student data.
 
 ## Features
 
 - **Student Model:** Manages student information including Name, Age, Address, Grade, and Major.
 - **Admin Interface:** Record new student details, update existing records, and delete records.
+- **Django Templates:** Provides a user-friendly web interface for creating, updating, and deleting student records using form-based interactions.
 - **REST API:** Exposes student model via a REST API for CRUD operations.
 - **Port Configuration:** Runs on `localhost` at port `8025`.
 
@@ -30,7 +31,7 @@ A Django-based web application for managing student records with integration of 
    pipenv shell
    ```
 
-3. **Set Up Environment Variables
+3. **Set Up Environment Variables**
 
    Copy the sample environment file and configure your settings:
 
@@ -38,7 +39,7 @@ A Django-based web application for managing student records with integration of 
    cp .env-sample .env
    ```
 
-4. **Update `.env` with your database and other settings. Example `.env` configuration:
+4. **Update `.env` with your database and other settings. Example `.env`** configuration:
 
    ```env
    DEBUG = True
@@ -50,19 +51,19 @@ A Django-based web application for managing student records with integration of 
    DATABASE_PORT = '<your-database-port>'
    ```
 
-5. **Run Migrations
+5. **Run Migrations**
 
    ```sh
    make migrate
    ```
 
-6. **Create Superuser (Optional)
+6. **Create Superuser (Optional)**
 
    ```sh
    make superuser
    ```
 
-7. **Run the Development Server
+7. **Run the Development Server**
 
    ```sh
    make run
@@ -70,13 +71,6 @@ A Django-based web application for managing student records with integration of 
 
 The application will be available at http://localhost:8025.
 
-## API Endpoints
-
-   * **List Students:** `GET /api/students/`
-   * **Create Student:** `POST /api/students/`
-   * **Retrieve Student:** `GET /api/students/{id}/`
-   * **Update Student:** `PUT /api/students/{id}/`
-   * **Delete Student:** `DELETE /api/students/{id}/`
 
 ## Code Quality
 
@@ -122,7 +116,7 @@ Run linting checks using:
 The REST API endpoints are available at:
 
 - List/Create: `http://localhost:8025/api/students/`
-- Retrieve/Update/Delete: `http://localhost:8025/api/students/<=slug>/`
+- Retrieve/Update/Delete: `http://localhost:8025/api/students/<slug>/`
 
 ### DJANGO TEMPLATE
 - List/Create: `http://localhost:8025/students-template/`
@@ -134,8 +128,6 @@ Use appropriate HTTP methods (GET, POST, PUT, DELETE) to interact with the API.
 
 For detailed API documentation, visit `http://localhost:8025/api/docs/` after starting the development server.
 
-
-5. Open a Pull Request
 
 ## License
 

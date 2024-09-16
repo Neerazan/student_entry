@@ -19,6 +19,16 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='student',
             name='major',
-            field=models.CharField(choices=[('CS', 'Computer Science'), ('MATH', 'Mathematics'), ('BIO', 'Biology'), ('CHEM', 'Chemistry'), ('PHY', 'Physics')], default='CS', max_length=4),
+            field=models.CharField(
+                choices=[
+                    ('CS', 'Computer Science'),
+                    ('MATH', 'Mathematics'),
+                    ('BIO', 'Biology'),
+                    ('CHEM', 'Chemistry'),
+                    ('PHY', 'Physics'),
+                ],
+                default='CS',
+                max_length=4,
+            ),
         ),
     ]

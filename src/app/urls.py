@@ -1,12 +1,7 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from .views import (
-    StudentViewSet,
-    student_list_create,
-    student_detail,
-    student_delete,
-)
+from .views import StudentViewSet, student_delete, student_detail, student_list_create
 
 router = DefaultRouter()
 router.register('students', StudentViewSet, basename='student')
