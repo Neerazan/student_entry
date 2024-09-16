@@ -14,7 +14,7 @@ A Django-based web application for managing student records with integration of 
 
 ### Prerequisites
 
-- Python 3.8 or later
+- Python 3.10 or later
 - Pipenv for virtual environment management
 
 ### Installation
